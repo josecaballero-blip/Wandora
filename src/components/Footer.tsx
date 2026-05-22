@@ -3,10 +3,9 @@ import Link from "next/link";
 export default function Footer() {
   return (
     <footer className="bg-gray-950 text-white">
-      <div className="max-w-7xl mx-auto px-6 lg:px-8 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
-          {/* Brand */}
-          <div className="lg:col-span-1">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
+        <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-12">
+          <div className="col-span-2 md:col-span-1">
             <Link href="/" className="flex items-center gap-2">
               <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-teal-500 to-emerald-500 flex items-center justify-center">
                 <svg
@@ -25,16 +24,15 @@ export default function Footer() {
               </div>
               <span className="text-2xl font-bold">Wandora</span>
             </Link>
-            <p className="mt-4 text-gray-400 text-sm leading-relaxed">
+            <p className="mt-4 text-gray-400 text-sm leading-relaxed max-w-xs">
               Descubre lo extraordinario. Tu guía definitiva para explorar
               los destinos más increíbles del planeta.
             </p>
           </div>
 
-          {/* Destinations */}
           <div>
             <h3 className="font-semibold text-white mb-4">Destinos</h3>
-            <ul className="space-y-3">
+            <ul className="space-y-2.5">
               {[
                 { name: "Cartagena", slug: "cartagena" },
                 { name: "Medellín", slug: "medellin" },
@@ -55,16 +53,15 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Company */}
           <div>
             <h3 className="font-semibold text-white mb-4">Wandora</h3>
-            <ul className="space-y-3">
+            <ul className="space-y-2.5">
               {[
                 "Sobre Nosotros",
                 "Blog de Viajes",
                 "Trabaja con Nosotros",
                 "Contacto",
-                "Política de Privacidad",
+                "Privacidad",
               ].map((item) => (
                 <li key={item}>
                   <span className="text-gray-400 hover:text-teal-400 transition-colors text-sm cursor-pointer">
@@ -75,7 +72,6 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Social */}
           <div>
             <h3 className="font-semibold text-white mb-4">Síguenos</h3>
             <div className="flex gap-3">
@@ -100,7 +96,7 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="mt-16 pt-8 border-t border-gray-800 flex flex-col md:flex-row items-center justify-between gap-4">
+        <div className="mt-12 sm:mt-16 pt-6 sm:pt-8 border-t border-gray-800 flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-gray-500 text-sm">
             &copy; {new Date().getFullYear()} Wandora. Todos los derechos
             reservados.

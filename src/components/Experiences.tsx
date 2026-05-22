@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { useTheme } from "@/lib/ThemeContext";
 
 const experiences = [
   {
@@ -94,40 +95,59 @@ const experiences = [
 ];
 
 export default function Experiences() {
+  const { theme } = useTheme();
+
   return (
-    <section id="experiencias" className="py-24 lg:py-32 bg-white">
-      <div className="max-w-7xl mx-auto px-6 lg:px-8">
+    <section
+      id="experiencias"
+      className={`py-20 lg:py-28 transition-colors duration-300 ${
+        theme === "dark" ? "bg-gray-950" : "bg-white"
+      }`}
+    >
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          className="text-center mb-14"
         >
-          <span className="text-teal-600 font-semibold text-sm tracking-widest uppercase">
+          <span className="text-teal-500 font-semibold text-sm tracking-widest uppercase">
             Vive al Máximo
           </span>
-          <h2 className="mt-3 text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 tracking-tight">
+          <h2
+            className={`mt-3 text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight ${
+              theme === "dark" ? "text-white" : "text-gray-900"
+            }`}
+          >
             Experiencias{" "}
             <span className="bg-gradient-to-r from-amber-500 to-orange-500 bg-clip-text text-transparent">
               Únicas
             </span>
           </h2>
-          <p className="mt-4 text-lg text-gray-600 max-w-2xl mx-auto">
+          <p
+            className={`mt-4 text-base sm:text-lg max-w-2xl mx-auto ${
+              theme === "dark" ? "text-gray-400" : "text-gray-600"
+            }`}
+          >
             Cada viaje es una colección de momentos. Nosotros te ayudamos a
             encontrar los mejores.
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-5 sm:gap-8">
           {experiences.map((exp, i) => (
             <motion.div
               key={exp.title}
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0, y: 40, scale: 0.97 }}
+              whileInView={{ opacity: 1, y: 0, scale: 1 }}
               viewport={{ once: true, margin: "-50px" }}
-              transition={{ duration: 0.5, delay: i * 0.1 }}
-              className="group relative rounded-3xl overflow-hidden h-80 cursor-pointer"
+              transition={{
+                duration: 0.6,
+                delay: i * 0.12,
+                ease: [0.25, 0.46, 0.45, 0.94],
+              }}
+              className="group relative rounded-2xl sm:rounded-3xl overflow-hidden h-64 sm:h-80 cursor-pointer"
             >
               <div
                 className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
@@ -135,14 +155,16 @@ export default function Experiences() {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent group-hover:from-black/90 transition-all duration-500" />
 
-              <div className="absolute bottom-0 left-0 right-0 p-8">
+              <div className="absolute bottom-0 left-0 right-0 p-5 sm:p-8">
                 <div className="flex items-center gap-3 mb-3">
-                  <div className="w-12 h-12 rounded-2xl bg-teal-500/20 backdrop-blur-sm border border-teal-400/30 flex items-center justify-center text-teal-300">
+                  <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl sm:rounded-2xl bg-teal-500/20 backdrop-blur-sm border border-teal-400/30 flex items-center justify-center text-teal-300">
                     {exp.icon}
                   </div>
-                  <h3 className="text-2xl font-bold text-white">{exp.title}</h3>
+                  <h3 className="text-xl sm:text-2xl font-bold text-white">
+                    {exp.title}
+                  </h3>
                 </div>
-                <p className="text-white/70 leading-relaxed">
+                <p className="text-white/70 text-sm sm:text-base leading-relaxed">
                   {exp.description}
                 </p>
               </div>

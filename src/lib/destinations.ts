@@ -9,6 +9,12 @@ export interface TravelTip {
   description: string;
 }
 
+export interface BookingLink {
+  name: string;
+  url: string;
+  type: "hotel" | "activity" | "flight";
+}
+
 export interface Destination {
   slug: string;
   name: string;
@@ -26,6 +32,8 @@ export interface Destination {
   language: string;
   currency: string;
   featured: boolean;
+  bookingLinks: BookingLink[];
+  flightSearchUrl: string;
 }
 
 export const destinations: Destination[] = [
@@ -36,63 +44,63 @@ export const destinations: Destination[] = [
     continent: "South America",
     tagline: "La Joya del Caribe Colombiano",
     description:
-      "Ciudad amurallada con historia colonial, playas paradisíacas y una vibrante vida nocturna que te dejará sin aliento.",
+      "Murallas centenarias, playas cristalinas, historia viva y el mejor atardecer del Caribe te esperan.",
     longDescription:
-      "Cartagena de Indias es una de las ciudades más hermosas de América Latina. Su centro histórico amurallado, declarado Patrimonio de la Humanidad por la UNESCO, te transporta a la época colonial con sus calles empedradas, balcones floridos y plazas encantadoras. Más allá de sus muros, encontrarás playas de arena blanca en las Islas del Rosario, la vibrante vida nocturna de Getsemaní, y una gastronomía que fusiona sabores del Caribe, África y España. Cada rincón de Cartagena cuenta una historia de piratas, libertadores y amor tropical.",
+      "Cartagena de Indias es una ciudad que atrapa todos los sentidos. Declarada Patrimonio de la Humanidad por la UNESCO, su centro histórico amurallado es un laberinto de calles empedradas, balcones florecidos, iglesias coloniales y plazas donde el tiempo parece detenerse. Pero Cartagena es mucho más que historia: sus playas en las Islas del Rosario son un paraíso de aguas turquesas, su gastronomía fusiona sabores africanos, españoles e indígenas, y su vida nocturna en Getsemaní es una explosión de música, arte callejero y cultura viva. Al atardecer, el Café del Mar sobre las murallas ofrece el espectáculo natural más hermoso del Caribe.",
     image:
-      "https://images.unsplash.com/photo-1583531172066-4cd9c9248569?w=1200&q=80",
+      "https://images.unsplash.com/photo-1583531172005-814194fd1f83?w=1200&q=80",
     gallery: [
-      "https://images.unsplash.com/photo-1583531172066-4cd9c9248569?w=800&q=80",
+      "https://images.unsplash.com/photo-1580975556833-3c7d8de41706?w=800&q=80",
       "https://images.unsplash.com/photo-1569839333583-7375336cde4b?w=800&q=80",
-      "https://images.unsplash.com/photo-1536086845120-8a645de57d64?w=800&q=80",
+      "https://images.unsplash.com/photo-1536086845232-6a5d65e6e5b3?w=800&q=80",
     ],
     activities: [
       {
-        name: "Recorrer la Ciudad Amurallada",
+        name: "Ciudad Amurallada",
         description:
-          "Pasea por las calles coloniales, admira la arquitectura y descubre iglesias históricas.",
+          "Recorre las calles coloniales del centro histórico declarado Patrimonio de la Humanidad.",
         icon: "castle",
       },
       {
         name: "Islas del Rosario",
         description:
-          "Navega hasta este archipiélago de aguas cristalinas perfecto para snorkel y buceo.",
-        icon: "waves",
+          "Navega hasta este archipiélago de aguas cristalinas y arrecifes de coral.",
+        icon: "island",
       },
       {
-        name: "Castillo San Felipe",
+        name: "Café del Mar",
         description:
-          "Explora la fortaleza más grande construida por los españoles en América.",
+          "Disfruta el atardecer más espectacular sobre las murallas con música chill.",
+        icon: "sunset",
+      },
+      {
+        name: "Castillo de San Felipe",
+        description:
+          "Explora la fortaleza militar más grande de América construida por los españoles.",
         icon: "fortress",
       },
       {
-        name: "Barrio Getsemaní",
+        name: "Getsemaní",
         description:
-          "Descubre el arte callejero, la música en vivo y los bares más auténticos.",
-        icon: "music",
-      },
-      {
-        name: "Tour Gastronómico",
-        description:
-          "Prueba ceviches, arepas de huevo, cocadas y la mejor cocina caribeña.",
-        icon: "food",
+          "Vive el barrio más cool de Cartagena con arte callejero, bares y rumba.",
+        icon: "art",
       },
     ],
     tips: [
       {
-        title: "Mejor época",
+        title: "Clima",
         description:
-          "Visita entre diciembre y abril para disfrutar del clima seco y soleado.",
+          "Temperatura de 28-32°C todo el año. Usa protector solar y mantente hidratado.",
       },
       {
         title: "Transporte",
         description:
-          "Usa taxis oficiales o apps de transporte. El centro histórico se recorre mejor a pie.",
+          "Camina por el centro histórico. Para las playas, usa lanchas desde el Muelle de la Bodeguita.",
       },
       {
         title: "Seguridad",
         description:
-          "Guarda tus pertenencias y evita zonas alejadas del centro por la noche.",
+          "Es segura para turistas. Evita zonas alejadas de noche y negocia precios antes.",
       },
     ],
     bestTime: "Diciembre - Abril",
@@ -100,6 +108,25 @@ export const destinations: Destination[] = [
     language: "Español",
     currency: "Peso Colombiano (COP)",
     featured: true,
+    bookingLinks: [
+      {
+        name: "Booking.com",
+        url: "https://www.booking.com/city/co/cartagena.html",
+        type: "hotel",
+      },
+      {
+        name: "Airbnb",
+        url: "https://www.airbnb.com/s/Cartagena--Colombia/homes",
+        type: "hotel",
+      },
+      {
+        name: "GetYourGuide",
+        url: "https://www.getyourguide.com/cartagena-l391/",
+        type: "activity",
+      },
+    ],
+    flightSearchUrl:
+      "https://www.skyscanner.com/transport/flights/nyca/ctga/",
   },
   {
     slug: "medellin",
@@ -108,28 +135,22 @@ export const destinations: Destination[] = [
     continent: "South America",
     tagline: "La Ciudad de la Eterna Primavera",
     description:
-      "Una ciudad reinventada con clima perfecto, innovación urbana y la calidez de su gente paisa.",
+      "Innovación, naturaleza exuberante, arte urbano y la calidez de su gente hacen de Medellín un destino único.",
     longDescription:
-      "Medellín ha pasado de ser una ciudad problemática a convertirse en un referente mundial de innovación y transformación urbana. Rodeada por montañas, con un clima primaveral durante todo el año, esta ciudad te sorprende con su sistema de metro y metrocable, sus parques biblioteca, la vibrante Comuna 13 llena de grafitis y escaleras eléctricas, y una escena gastronómica y de vida nocturna que no tiene igual. Los paisas son conocidos por su hospitalidad, y cada visita se convierte en una experiencia llena de calidez humana.",
+      "Medellín ha pasado de ser una ciudad con un pasado difícil a convertirse en un modelo global de transformación urbana. Ubicada en el Valle de Aburrá a 1,500 metros de altitud, goza de un clima primaveral perfecto durante todo el año. Sus sistemas de transporte innovadores como el Metrocable te llevan a miradores con vistas impresionantes, mientras que la Comuna 13 —antes la zona más peligrosa— es hoy un museo de arte urbano a cielo abierto. Guatapé, a pocas horas, ofrece la famosa Piedra del Peñol con 740 escalones y vistas de ensueño. La Feria de las Flores, los parques, la gastronomía paisa y la energía contagiosa de los paisas hacen de Medellín un destino que enamora.",
     image:
-      "https://images.unsplash.com/photo-1599487488167-5abb490d0017?w=1200&q=80",
+      "https://images.unsplash.com/photo-1568736333610-eae6e0d4dbbb?w=1200&q=80",
     gallery: [
-      "https://images.unsplash.com/photo-1599487488167-5abb490d0017?w=800&q=80",
-      "https://images.unsplash.com/photo-1577587230708-187fdbef4d91?w=800&q=80",
-      "https://images.unsplash.com/photo-1568736333610-eae6e0ab0f6d?w=800&q=80",
+      "https://images.unsplash.com/photo-1599413987323-60e0a3b62823?w=800&q=80",
+      "https://images.unsplash.com/photo-1595981267686-e5e3bc058ded?w=800&q=80",
+      "https://images.unsplash.com/photo-1572722250878-b4c9a7ea6187?w=800&q=80",
     ],
     activities: [
       {
         name: "Comuna 13",
         description:
-          "Recorre las famosas escaleras eléctricas y admira el arte urbano más impresionante.",
-        icon: "art",
-      },
-      {
-        name: "Metrocable",
-        description:
-          "Sube en teleférico y disfruta de vistas panorámicas espectaculares de la ciudad.",
-        icon: "cable-car",
+          "Descubre la transformación urbana más inspiradora del mundo con grafitis espectaculares.",
+        icon: "graffiti",
       },
       {
         name: "Plaza Botero",
@@ -172,6 +193,25 @@ export const destinations: Destination[] = [
     language: "Español",
     currency: "Peso Colombiano (COP)",
     featured: true,
+    bookingLinks: [
+      {
+        name: "Booking.com",
+        url: "https://www.booking.com/city/co/medellin.html",
+        type: "hotel",
+      },
+      {
+        name: "Airbnb",
+        url: "https://www.airbnb.com/s/Medellin--Colombia/homes",
+        type: "hotel",
+      },
+      {
+        name: "GetYourGuide",
+        url: "https://www.getyourguide.com/medellin-l4034/",
+        type: "activity",
+      },
+    ],
+    flightSearchUrl:
+      "https://www.skyscanner.com/transport/flights/nyca/mdea/",
   },
   {
     slug: "cali",
@@ -184,10 +224,10 @@ export const destinations: Destination[] = [
     longDescription:
       "Santiago de Cali, la tercera ciudad más grande de Colombia, es reconocida mundialmente como la Capital de la Salsa. Aquí la música no es solo entretenimiento, es un modo de vida. Desde las escuelas de salsa hasta las salsotecas de Juanchito, cada noche es una fiesta. Pero Cali es mucho más: el barrio San Antonio con sus calles bohemias, el cerro de Cristo Rey con vistas panorámicas, la gastronomía vallecaucana con su famoso cholado, y una energía contagiosa que te hace sentir vivo. Los caleños son famosos por su alegría y su capacidad de convertir cualquier momento en celebración.",
     image:
-      "https://images.unsplash.com/photo-1624227258787-63e51ed7c49d?w=1200&q=80",
+      "https://images.unsplash.com/photo-1616091216791-a5360ab66dc0?w=1200&q=80",
     gallery: [
-      "https://images.unsplash.com/photo-1624227258787-63e51ed7c49d?w=800&q=80",
-      "https://images.unsplash.com/photo-1558642452-9d2a7deb7f62?w=800&q=80",
+      "https://images.unsplash.com/photo-1616091093714-ccc305e8c4e7?w=800&q=80",
+      "https://images.unsplash.com/photo-1533106497176-45ae19e68ba2?w=800&q=80",
       "https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=800&q=80",
     ],
     activities: [
@@ -244,6 +284,25 @@ export const destinations: Destination[] = [
     language: "Español",
     currency: "Peso Colombiano (COP)",
     featured: true,
+    bookingLinks: [
+      {
+        name: "Booking.com",
+        url: "https://www.booking.com/city/co/cali.html",
+        type: "hotel",
+      },
+      {
+        name: "Airbnb",
+        url: "https://www.airbnb.com/s/Cali--Colombia/homes",
+        type: "hotel",
+      },
+      {
+        name: "GetYourGuide",
+        url: "https://www.getyourguide.com/cali-l106226/",
+        type: "activity",
+      },
+    ],
+    flightSearchUrl:
+      "https://www.skyscanner.com/transport/flights/nyca/clia/",
   },
   {
     slug: "bucaramanga",
@@ -256,11 +315,11 @@ export const destinations: Destination[] = [
     longDescription:
       "Bucaramanga, conocida como 'La Ciudad Bonita', es una joya escondida en el corazón de Santander. Rodeada de montañas y con más de 160 parques, esta ciudad combina naturaleza con modernidad. A pocos kilómetros encontrarás el impresionante Cañón del Chicamocha, uno de los más profundos del mundo, donde puedes hacer parapente, canopy y teleférico. El pueblo colonial de Girón, la Mesa de los Santos con sus actividades de aventura, y una gastronomía única con hormigas culonas, mute santandereano y carne oreada hacen de Bucaramanga un destino inolvidable.",
     image:
-      "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1200&q=80",
+      "https://images.unsplash.com/photo-1559128010-7c1ad6e1b6a5?w=1200&q=80",
     gallery: [
-      "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&q=80",
       "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=800&q=80",
       "https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=800&q=80",
+      "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=800&q=80",
     ],
     activities: [
       {
@@ -316,6 +375,25 @@ export const destinations: Destination[] = [
     language: "Español",
     currency: "Peso Colombiano (COP)",
     featured: false,
+    bookingLinks: [
+      {
+        name: "Booking.com",
+        url: "https://www.booking.com/city/co/bucaramanga.html",
+        type: "hotel",
+      },
+      {
+        name: "Airbnb",
+        url: "https://www.airbnb.com/s/Bucaramanga--Colombia/homes",
+        type: "hotel",
+      },
+      {
+        name: "GetYourGuide",
+        url: "https://www.getyourguide.com/bucaramanga-l94498/",
+        type: "activity",
+      },
+    ],
+    flightSearchUrl:
+      "https://www.skyscanner.com/transport/flights/nyca/bga0/",
   },
   {
     slug: "bali",
@@ -330,9 +408,9 @@ export const destinations: Destination[] = [
     image:
       "https://images.unsplash.com/photo-1537996194471-e657df975ab4?w=1200&q=80",
     gallery: [
-      "https://images.unsplash.com/photo-1537996194471-e657df975ab4?w=800&q=80",
       "https://images.unsplash.com/photo-1555400038-63f5ba517a47?w=800&q=80",
       "https://images.unsplash.com/photo-1518548419970-58e3b4079ab2?w=800&q=80",
+      "https://images.unsplash.com/photo-1573790387438-4da905039392?w=800&q=80",
     ],
     activities: [
       {
@@ -381,6 +459,25 @@ export const destinations: Destination[] = [
     language: "Bahasa Indonesia",
     currency: "Rupia Indonesia (IDR)",
     featured: true,
+    bookingLinks: [
+      {
+        name: "Booking.com",
+        url: "https://www.booking.com/region/id/bali.html",
+        type: "hotel",
+      },
+      {
+        name: "Airbnb",
+        url: "https://www.airbnb.com/s/Bali--Indonesia/homes",
+        type: "hotel",
+      },
+      {
+        name: "GetYourGuide",
+        url: "https://www.getyourguide.com/bali-l347/",
+        type: "activity",
+      },
+    ],
+    flightSearchUrl:
+      "https://www.skyscanner.com/transport/flights/nyca/dps0/",
   },
   {
     slug: "paris",
@@ -395,9 +492,9 @@ export const destinations: Destination[] = [
     image:
       "https://images.unsplash.com/photo-1502602898657-3e91760cbb34?w=1200&q=80",
     gallery: [
-      "https://images.unsplash.com/photo-1502602898657-3e91760cbb34?w=800&q=80",
       "https://images.unsplash.com/photo-1499856871958-5b9627545d1a?w=800&q=80",
       "https://images.unsplash.com/photo-1550340499-a6c60fc8287c?w=800&q=80",
+      "https://images.unsplash.com/photo-1431274172761-fca41d930114?w=800&q=80",
     ],
     activities: [
       {
@@ -447,6 +544,25 @@ export const destinations: Destination[] = [
     language: "Francés",
     currency: "Euro (EUR)",
     featured: true,
+    bookingLinks: [
+      {
+        name: "Booking.com",
+        url: "https://www.booking.com/city/fr/paris.html",
+        type: "hotel",
+      },
+      {
+        name: "Airbnb",
+        url: "https://www.airbnb.com/s/Paris--France/homes",
+        type: "hotel",
+      },
+      {
+        name: "GetYourGuide",
+        url: "https://www.getyourguide.com/paris-l16/",
+        type: "activity",
+      },
+    ],
+    flightSearchUrl:
+      "https://www.skyscanner.com/transport/flights/nyca/pari/",
   },
   {
     slug: "tokyo",
@@ -461,9 +577,9 @@ export const destinations: Destination[] = [
     image:
       "https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?w=1200&q=80",
     gallery: [
-      "https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?w=800&q=80",
       "https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?w=800&q=80",
       "https://images.unsplash.com/photo-1528360983277-13d401cdc186?w=800&q=80",
+      "https://images.unsplash.com/photo-1545569341-9eb8b30979d9?w=800&q=80",
     ],
     activities: [
       {
@@ -512,6 +628,25 @@ export const destinations: Destination[] = [
     language: "Japonés",
     currency: "Yen Japonés (JPY)",
     featured: true,
+    bookingLinks: [
+      {
+        name: "Booking.com",
+        url: "https://www.booking.com/city/jp/tokyo.html",
+        type: "hotel",
+      },
+      {
+        name: "Airbnb",
+        url: "https://www.airbnb.com/s/Tokyo--Japan/homes",
+        type: "hotel",
+      },
+      {
+        name: "GetYourGuide",
+        url: "https://www.getyourguide.com/tokyo-l193/",
+        type: "activity",
+      },
+    ],
+    flightSearchUrl:
+      "https://www.skyscanner.com/transport/flights/nyca/tyoa/",
   },
   {
     slug: "santorini",
@@ -526,9 +661,9 @@ export const destinations: Destination[] = [
     image:
       "https://images.unsplash.com/photo-1570077188670-e3a8d69ac5ff?w=1200&q=80",
     gallery: [
-      "https://images.unsplash.com/photo-1570077188670-e3a8d69ac5ff?w=800&q=80",
       "https://images.unsplash.com/photo-1613395877344-13d4a8e0d49e?w=800&q=80",
       "https://images.unsplash.com/photo-1560703650-ef3e0f254ae0?w=800&q=80",
+      "https://images.unsplash.com/photo-1533105079780-92b9be482077?w=800&q=80",
     ],
     activities: [
       {
@@ -577,6 +712,25 @@ export const destinations: Destination[] = [
     language: "Griego",
     currency: "Euro (EUR)",
     featured: false,
+    bookingLinks: [
+      {
+        name: "Booking.com",
+        url: "https://www.booking.com/island/gr/santorini.html",
+        type: "hotel",
+      },
+      {
+        name: "Airbnb",
+        url: "https://www.airbnb.com/s/Santorini--Greece/homes",
+        type: "hotel",
+      },
+      {
+        name: "GetYourGuide",
+        url: "https://www.getyourguide.com/santorini-l478/",
+        type: "activity",
+      },
+    ],
+    flightSearchUrl:
+      "https://www.skyscanner.com/transport/flights/nyca/jtra/",
   },
   {
     slug: "cusco",
@@ -589,11 +743,11 @@ export const destinations: Destination[] = [
     longDescription:
       "Cusco fue la capital del Imperio Inca y hoy es la puerta de entrada a una de las Siete Maravillas del Mundo Moderno: Machu Picchu. La ciudad mezcla arquitectura inca con colonial española de una manera única. Sus calles empedradas, sus mercados coloridos, el Valle Sagrado con sus terrazas agrícolas y la Montaña de Siete Colores crean una experiencia que combina historia, aventura y misticismo. Aquí el pasado no es solo historia, es un modo de vida que se respira en cada ceremonia, en cada textil tejido a mano, en cada plato de la extraordinaria gastronomía peruana.",
     image:
-      "https://images.unsplash.com/photo-1587595431973-160d0d163e19?w=1200&q=80",
+      "https://images.unsplash.com/photo-1526392060635-9d6019884377?w=1200&q=80",
     gallery: [
       "https://images.unsplash.com/photo-1587595431973-160d0d163e19?w=800&q=80",
-      "https://images.unsplash.com/photo-1526392060635-9d6019884377?w=800&q=80",
       "https://images.unsplash.com/photo-1580619305218-8423a7ef79b4?w=800&q=80",
+      "https://images.unsplash.com/photo-1548820395-fdf89989af8a?w=800&q=80",
     ],
     activities: [
       {
@@ -643,6 +797,25 @@ export const destinations: Destination[] = [
     language: "Español / Quechua",
     currency: "Sol Peruano (PEN)",
     featured: true,
+    bookingLinks: [
+      {
+        name: "Booking.com",
+        url: "https://www.booking.com/city/pe/cusco.html",
+        type: "hotel",
+      },
+      {
+        name: "Airbnb",
+        url: "https://www.airbnb.com/s/Cusco--Peru/homes",
+        type: "hotel",
+      },
+      {
+        name: "GetYourGuide",
+        url: "https://www.getyourguide.com/cusco-l569/",
+        type: "activity",
+      },
+    ],
+    flightSearchUrl:
+      "https://www.skyscanner.com/transport/flights/nyca/cuza/",
   },
 ];
 

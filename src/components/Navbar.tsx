@@ -3,10 +3,12 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
+import { useTheme } from "@/lib/ThemeContext";
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const { theme, toggleTheme } = useTheme();
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 50);
@@ -14,31 +16,45 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  const navBg = scrolled
+    ? theme === "dark"
+      ? "bg-gray-900/90 backdrop-blur-xl shadow-lg border-b border-gray-700/50"
+      : "bg-white/90 backdrop-blur-xl shadow-lg border-b border-gray-100"
+    : "bg-transparent";
+
+  const textColor = scrolled
+    ? theme === "dark"
+      ? "text-gray-100"
+      : "text-gray-900"
+    : "text-white";
+
+  const linkColor = scrolled
+    ? theme === "dark"
+      ? "text-gray-300 hover:text-teal-400"
+      : "text-gray-700 hover:text-teal-700"
+    : "text-white/90 hover:text-white";
+
   return (
     <>
       <motion.nav
         initial={{ y: -100 }}
         animate={{ y: 0 }}
         transition={{ duration: 0.6, ease: "easeOut" }}
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-          scrolled
-            ? "bg-white/90 backdrop-blur-xl shadow-lg border-b border-gray-100"
-            : "bg-transparent"
-        }`}
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${navBg}`}
       >
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="flex items-center justify-between h-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex items-center justify-between h-16 sm:h-20">
             <Link href="/" className="flex items-center gap-2 group">
               <div className="relative">
                 <div
-                  className={`w-10 h-10 rounded-xl flex items-center justify-center transition-all duration-300 group-hover:scale-110 ${
+                  className={`w-9 h-9 sm:w-10 sm:h-10 rounded-xl flex items-center justify-center transition-all duration-300 group-hover:scale-110 ${
                     scrolled
                       ? "bg-gradient-to-br from-teal-600 to-emerald-500"
                       : "bg-white/20 backdrop-blur-sm"
                   }`}
                 >
                   <svg
-                    className="w-6 h-6 text-white"
+                    className="w-5 h-5 sm:w-6 sm:h-6 text-white"
                     fill="none"
                     viewBox="0 0 24 24"
                     stroke="currentColor"
@@ -53,70 +69,116 @@ export default function Navbar() {
                 </div>
               </div>
               <span
-                className={`text-2xl font-bold tracking-tight transition-colors duration-300 ${
-                  scrolled ? "text-gray-900" : "text-white"
-                }`}
+                className={`text-xl sm:text-2xl font-bold tracking-tight transition-colors duration-300 ${textColor}`}
               >
                 Wandora
               </span>
             </Link>
 
-            <div className="hidden md:flex items-center gap-8">
+            <div className="hidden md:flex items-center gap-6 lg:gap-8">
               {[
                 { href: "/#destinos", label: "Destinos" },
                 { href: "/#experiencias", label: "Experiencias" },
-                { href: "/#tips", label: "Tips de Viaje" },
-                { href: "/#sobre", label: "Sobre Nosotros" },
+                { href: "/#vuelos", label: "Vuelos" },
+                { href: "/#tips", label: "Tips" },
+                { href: "/#sobre", label: "Nosotros" },
               ].map((link) => (
                 <Link
                   key={link.href}
                   href={link.href}
-                  className={`text-sm font-medium transition-all duration-300 hover:scale-105 relative group ${
-                    scrolled
-                      ? "text-gray-700 hover:text-teal-700"
-                      : "text-white/90 hover:text-white"
-                  }`}
+                  className={`text-sm font-medium transition-all duration-300 hover:scale-105 relative group ${linkColor}`}
                 >
                   {link.label}
                   <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-teal-500 transition-all duration-300 group-hover:w-full" />
                 </Link>
               ))}
+
+              <button
+                onClick={toggleTheme}
+                className={`p-2 rounded-xl transition-all duration-300 hover:scale-110 ${
+                  scrolled
+                    ? theme === "dark"
+                      ? "bg-gray-800 text-amber-400 hover:bg-gray-700"
+                      : "bg-gray-100 text-gray-700 hover:bg-gray-200"
+                    : "bg-white/10 text-white hover:bg-white/20"
+                }`}
+                aria-label="Cambiar tema"
+              >
+                {theme === "dark" ? (
+                  <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M12 3v2.25m6.364.386l-1.591 1.591M21 12h-2.25m-.386 6.364l-1.591-1.591M12 18.75V21m-4.773-4.227l-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z" />
+                  </svg>
+                ) : (
+                  <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M21.752 15.002A9.718 9.718 0 0118 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 003 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 009.002-5.998z" />
+                  </svg>
+                )}
+              </button>
+
               <Link
                 href="/#destinos"
                 className="px-5 py-2.5 bg-gradient-to-r from-teal-600 to-emerald-500 text-white text-sm font-semibold rounded-full hover:shadow-lg hover:shadow-teal-500/30 transition-all duration-300 hover:scale-105"
               >
-                Explorar Ahora
+                Explorar
               </Link>
             </div>
 
-            <button
-              onClick={() => setMenuOpen(!menuOpen)}
-              className={`md:hidden p-2 rounded-lg transition-colors ${
-                scrolled ? "text-gray-700" : "text-white"
-              }`}
-            >
-              <svg
-                className="w-6 h-6"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-                strokeWidth={2}
+            <div className="flex items-center gap-2 md:hidden">
+              <button
+                onClick={toggleTheme}
+                className={`p-2.5 rounded-xl transition-colors ${
+                  scrolled
+                    ? theme === "dark"
+                      ? "text-amber-400"
+                      : "text-gray-700"
+                    : "text-white"
+                }`}
+                aria-label="Cambiar tema"
               >
-                {menuOpen ? (
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M6 18L18 6M6 6l12 12"
-                  />
+                {theme === "dark" ? (
+                  <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M12 3v2.25m6.364.386l-1.591 1.591M21 12h-2.25m-.386 6.364l-1.591-1.591M12 18.75V21m-4.773-4.227l-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z" />
+                  </svg>
                 ) : (
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M4 6h16M4 12h16M4 18h16"
-                  />
+                  <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M21.752 15.002A9.718 9.718 0 0118 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 003 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 009.002-5.998z" />
+                  </svg>
                 )}
-              </svg>
-            </button>
+              </button>
+
+              <button
+                onClick={() => setMenuOpen(!menuOpen)}
+                className={`p-2 rounded-lg transition-colors ${
+                  scrolled
+                    ? theme === "dark"
+                      ? "text-gray-100"
+                      : "text-gray-700"
+                    : "text-white"
+                }`}
+              >
+                <svg
+                  className="w-6 h-6"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  strokeWidth={2}
+                >
+                  {menuOpen ? (
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M6 18L18 6M6 6l12 12"
+                    />
+                  ) : (
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M4 6h16M4 12h16M4 18h16"
+                    />
+                  )}
+                </svg>
+              </button>
+            </div>
           </div>
         </div>
       </motion.nav>
@@ -127,12 +189,15 @@ export default function Navbar() {
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
-            className="fixed inset-0 z-40 bg-white/95 backdrop-blur-xl md:hidden pt-24"
+            className={`fixed inset-0 z-40 backdrop-blur-xl md:hidden pt-20 ${
+              theme === "dark" ? "bg-gray-900/95" : "bg-white/95"
+            }`}
           >
-            <div className="flex flex-col items-center gap-8 p-8">
+            <div className="flex flex-col items-center gap-6 p-8">
               {[
                 { href: "/#destinos", label: "Destinos" },
                 { href: "/#experiencias", label: "Experiencias" },
+                { href: "/#vuelos", label: "Vuelos" },
                 { href: "/#tips", label: "Tips de Viaje" },
                 { href: "/#sobre", label: "Sobre Nosotros" },
               ].map((link) => (
@@ -140,7 +205,11 @@ export default function Navbar() {
                   key={link.href}
                   href={link.href}
                   onClick={() => setMenuOpen(false)}
-                  className="text-2xl font-semibold text-gray-800 hover:text-teal-600 transition-colors"
+                  className={`text-xl font-semibold transition-colors ${
+                    theme === "dark"
+                      ? "text-gray-100 hover:text-teal-400"
+                      : "text-gray-800 hover:text-teal-600"
+                  }`}
                 >
                   {link.label}
                 </Link>
