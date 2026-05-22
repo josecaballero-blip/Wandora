@@ -1,4 +1,5 @@
 import Link from "next/link";
+import WandoraLogo from "./WandoraLogo";
 
 export default function Footer() {
   return (
@@ -7,39 +8,26 @@ export default function Footer() {
         <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-12">
           <div className="col-span-2 md:col-span-1">
             <Link href="/" className="flex items-center gap-2">
-              <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-teal-500 to-emerald-500 flex items-center justify-center">
-                <svg
-                  className="w-6 h-6 text-white"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                  strokeWidth={2}
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-                  />
-                </svg>
-              </div>
+              <WandoraLogo size={40} />
               <span className="text-2xl font-bold">Wandora</span>
             </Link>
             <p className="mt-4 text-gray-400 text-sm leading-relaxed max-w-xs">
-              Descubre lo extraordinario. Tu guía definitiva para explorar
-              los destinos más increíbles del planeta.
+              Descubre la magia de Colombia y el mundo. Tu guia definitiva
+              para explorar los destinos mas increibles con precios reales.
             </p>
           </div>
 
           <div>
-            <h3 className="font-semibold text-white mb-4">Destinos</h3>
+            <h3 className="font-semibold text-white mb-4">Colombia</h3>
             <ul className="space-y-2.5">
               {[
+                { name: "Bogota", slug: "bogota" },
                 { name: "Cartagena", slug: "cartagena" },
-                { name: "Medellín", slug: "medellin" },
+                { name: "Medellin", slug: "medellin" },
+                { name: "Santa Marta", slug: "santa-marta" },
+                { name: "San Andres", slug: "san-andres" },
+                { name: "Eje Cafetero", slug: "eje-cafetero" },
                 { name: "Cali", slug: "cali" },
-                { name: "Bali", slug: "bali" },
-                { name: "París", slug: "paris" },
-                { name: "Tokio", slug: "tokyo" },
               ].map((dest) => (
                 <li key={dest.slug}>
                   <Link
@@ -59,7 +47,8 @@ export default function Footer() {
               {[
                 "Sobre Nosotros",
                 "Blog de Viajes",
-                "Trabaja con Nosotros",
+                "Conversor de Moneda",
+                "Vuelos Baratos",
                 "Contacto",
                 "Privacidad",
               ].map((item) => (
@@ -73,7 +62,7 @@ export default function Footer() {
           </div>
 
           <div>
-            <h3 className="font-semibold text-white mb-4">Síguenos</h3>
+            <h3 className="font-semibold text-white mb-4">Siguenos</h3>
             <div className="flex gap-3">
               {["Instagram", "TikTok", "YouTube", "Twitter"].map((social) => (
                 <div
@@ -102,7 +91,7 @@ export default function Footer() {
             reservados.
           </p>
           <p className="text-gray-600 text-xs">
-            Hecho con amor para los viajeros del mundo
+            Hecho con amor para los viajeros de Colombia y el mundo
           </p>
         </div>
       </div>

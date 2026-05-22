@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import { useTheme } from "@/lib/ThemeContext";
+import WandoraLogo from "./WandoraLogo";
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -34,6 +35,14 @@ export default function Navbar() {
       : "text-gray-700 hover:text-teal-700"
     : "text-white/90 hover:text-white";
 
+  const navLinks = [
+    { href: "/#destinos", label: "Destinos" },
+    { href: "/#experiencias", label: "Experiencias" },
+    { href: "/#vuelos", label: "Vuelos" },
+    { href: "/#conversor", label: "Conversor" },
+    { href: "/#tips", label: "Tips" },
+  ];
+
   return (
     <>
       <motion.nav
@@ -45,29 +54,12 @@ export default function Navbar() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16 sm:h-20">
             <Link href="/" className="flex items-center gap-2 group">
-              <div className="relative">
-                <div
-                  className={`w-9 h-9 sm:w-10 sm:h-10 rounded-xl flex items-center justify-center transition-all duration-300 group-hover:scale-110 ${
-                    scrolled
-                      ? "bg-gradient-to-br from-teal-600 to-emerald-500"
-                      : "bg-white/20 backdrop-blur-sm"
-                  }`}
-                >
-                  <svg
-                    className="w-5 h-5 sm:w-6 sm:h-6 text-white"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                    strokeWidth={2}
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-                    />
-                  </svg>
-                </div>
-              </div>
+              <motion.div
+                whileHover={{ rotate: 15, scale: 1.1 }}
+                transition={{ type: "spring", stiffness: 300 }}
+              >
+                <WandoraLogo size={36} />
+              </motion.div>
               <span
                 className={`text-xl sm:text-2xl font-bold tracking-tight transition-colors duration-300 ${textColor}`}
               >
@@ -75,14 +67,8 @@ export default function Navbar() {
               </span>
             </Link>
 
-            <div className="hidden md:flex items-center gap-6 lg:gap-8">
-              {[
-                { href: "/#destinos", label: "Destinos" },
-                { href: "/#experiencias", label: "Experiencias" },
-                { href: "/#vuelos", label: "Vuelos" },
-                { href: "/#tips", label: "Tips" },
-                { href: "/#sobre", label: "Nosotros" },
-              ].map((link) => (
+            <div className="hidden md:flex items-center gap-5 lg:gap-7">
+              {navLinks.map((link) => (
                 <Link
                   key={link.href}
                   href={link.href}
@@ -198,6 +184,7 @@ export default function Navbar() {
                 { href: "/#destinos", label: "Destinos" },
                 { href: "/#experiencias", label: "Experiencias" },
                 { href: "/#vuelos", label: "Vuelos" },
+                { href: "/#conversor", label: "Conversor" },
                 { href: "/#tips", label: "Tips de Viaje" },
                 { href: "/#sobre", label: "Sobre Nosotros" },
               ].map((link) => (
@@ -219,7 +206,7 @@ export default function Navbar() {
                 onClick={() => setMenuOpen(false)}
                 className="mt-4 px-8 py-3 bg-gradient-to-r from-teal-600 to-emerald-500 text-white font-semibold rounded-full"
               >
-                Explorar Ahora
+                Explorar Colombia
               </Link>
             </div>
           </motion.div>

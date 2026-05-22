@@ -20,7 +20,7 @@ export default function DestinationCard({
       viewport={{ once: true, margin: "-50px" }}
       transition={{
         duration: 0.6,
-        delay: (index % 3) * 0.15,
+        delay: (index % 3) * 0.12,
         ease: [0.25, 0.46, 0.45, 0.94],
       }}
     >
@@ -35,10 +35,19 @@ export default function DestinationCard({
 
         <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-80 group-hover:opacity-90 transition-opacity duration-500" />
 
-        <div className="absolute top-3 left-3 sm:top-4 sm:left-4">
+        <div className="absolute top-3 left-3 sm:top-4 sm:left-4 flex gap-2">
           <span className="px-2.5 py-1 sm:px-3 sm:py-1.5 bg-white/20 backdrop-blur-md rounded-full text-white text-xs font-medium border border-white/10">
             {destination.country}
           </span>
+          {destination.country === "Colombia" && (
+            <motion.span
+              className="px-2.5 py-1 sm:px-3 sm:py-1.5 bg-amber-500/80 backdrop-blur-md rounded-full text-white text-xs font-medium"
+              animate={{ scale: [1, 1.05, 1] }}
+              transition={{ duration: 2, repeat: Infinity }}
+            >
+              🇨🇴
+            </motion.span>
+          )}
         </div>
 
         <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-6">
@@ -53,21 +62,26 @@ export default function DestinationCard({
               {destination.description}
             </p>
 
-            <div className="flex items-center gap-2 text-white/80">
-              <span className="text-sm">Explorar</span>
-              <svg
-                className="w-4 h-4 transform transition-transform duration-300 group-hover:translate-x-2"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-                strokeWidth={2}
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M13 7l5 5m0 0l-5 5m5-5H6"
-                />
-              </svg>
+            <div className="flex items-center justify-between">
+              <div className="flex items-center gap-2 text-white/80">
+                <span className="text-sm">Explorar</span>
+                <svg
+                  className="w-4 h-4 transform transition-transform duration-300 group-hover:translate-x-2"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  strokeWidth={2}
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M13 7l5 5m0 0l-5 5m5-5H6"
+                  />
+                </svg>
+              </div>
+              <span className="text-xs text-amber-300/80 font-medium opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                {destination.flightPriceFrom}
+              </span>
             </div>
           </motion.div>
         </div>

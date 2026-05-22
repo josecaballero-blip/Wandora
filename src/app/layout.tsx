@@ -1,31 +1,34 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Nunito, Fredoka } from "next/font/google";
 import { ThemeProvider } from "@/lib/ThemeContext";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const nunito = Nunito({
+  variable: "--font-nunito",
   subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700", "800", "900"],
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const fredoka = Fredoka({
+  variable: "--font-fredoka",
   subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700"],
 });
 
 export const metadata: Metadata = {
-  title: "Wandora — Discover the Extraordinary",
+  title: "Wandora — Descubre la Magia de Colombia",
   description:
-    "Explore exotic destinations around the world. From Colombia's magical cities to the most breathtaking places on Earth. Your next adventure starts here.",
+    "Explora los destinos mas magicos de Colombia y el mundo. Playas caribenas, ciudades vibrantes, selva amazonica, precios reales y recomendaciones de alojamiento.",
   keywords: [
-    "travel",
-    "tourism",
-    "destinations",
-    "Colombia",
+    "turismo Colombia",
+    "viajes Colombia",
     "Cartagena",
-    "Medellín",
-    "exotic places",
-    "adventure",
+    "Medellin",
+    "Bogota",
+    "San Andres",
+    "destinos exoticos",
+    "aventura",
+    "vuelos baratos Colombia",
   ],
 };
 
@@ -37,7 +40,7 @@ export default function RootLayout({
   return (
     <html
       lang="es"
-      className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+      className={`${nunito.variable} ${fredoka.variable} antialiased`}
       suppressHydrationWarning
     >
       <head>
