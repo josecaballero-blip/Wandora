@@ -1,17 +1,19 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 export default function Newsletter() {
   return (
     <section className="py-20 lg:py-28 relative overflow-hidden">
       <div className="absolute inset-0">
-        <div
-          className="absolute inset-0 bg-cover bg-center"
-          style={{
-            backgroundImage:
-              "url(https://images.unsplash.com/photo-1488085061387-422e29b40080?w=1920&q=80)",
-          }}
+        <Image
+          src="https://images.unsplash.com/photo-1488085061387-422e29b40080?w=1200&q=60&auto=format&fit=crop"
+          alt="Fondo viajes"
+          fill
+          sizes="100vw"
+          className="object-cover"
+          loading="lazy"
         />
         <div className="absolute inset-0 bg-gradient-to-r from-teal-900/90 to-emerald-900/90" />
       </div>

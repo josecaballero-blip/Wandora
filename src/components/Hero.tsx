@@ -32,11 +32,12 @@ export default function Hero() {
           muted
           loop
           playsInline
-          poster="https://images.unsplash.com/photo-1506929562872-bb421503ef21?w=1920&q=80"
+          poster="https://images.unsplash.com/photo-1506929562872-bb421503ef21?w=1200&q=60&auto=format&fit=crop"
           className="absolute inset-0 w-full h-full object-cover scale-105"
+          preload="metadata"
         >
           <source
-            src="https://videos.pexels.com/video-files/3571264/3571264-uhd_2560_1440_30fps.mp4"
+            src="https://videos.pexels.com/video-files/3571264/3571264-hd_1280_720_30fps.mp4"
             type="video/mp4"
           />
         </video>

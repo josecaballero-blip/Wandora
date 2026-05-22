@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
+import Image from "next/image";
 import type { Destination } from "@/lib/destinations";
 import { useTheme } from "@/lib/ThemeContext";
 
@@ -31,9 +32,13 @@ export default function DestinationDetail({ destination }: Props) {
       {/* Hero */}
       <section className="relative min-h-[60vh] sm:min-h-[70vh] flex items-end overflow-hidden">
         <div className="absolute inset-0">
-          <div
-            className="absolute inset-0 bg-cover bg-center"
-            style={{ backgroundImage: `url(${destination.image})` }}
+          <Image
+            src={destination.image}
+            alt={destination.name}
+            fill
+            sizes="100vw"
+            className="object-cover"
+            priority
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-black/50" />
         </div>
@@ -144,9 +149,17 @@ export default function DestinationDetail({ destination }: Props) {
                   key={i}
                   whileHover={{ scale: 1.05 }}
                   transition={{ type: "spring", stiffness: 300 }}
-                  className={`rounded-xl sm:rounded-2xl overflow-hidden bg-cover bg-center ${i === 0 ? "col-span-2 aspect-video" : "aspect-square"}`}
-                  style={{ backgroundImage: `url(${img})` }}
-                />
+                  className={`relative rounded-xl sm:rounded-2xl overflow-hidden ${i === 0 ? "col-span-2 aspect-video" : "aspect-square"}`}
+                >
+                  <Image
+                    src={img}
+                    alt={`${destination.name} ${i + 1}`}
+                    fill
+                    sizes={i === 0 ? "(max-width: 768px) 100vw, 50vw" : "(max-width: 768px) 50vw, 25vw"}
+                    className="object-cover"
+                    loading="lazy"
+                  />
+                </motion.div>
               ))}
             </motion.div>
           </div>
