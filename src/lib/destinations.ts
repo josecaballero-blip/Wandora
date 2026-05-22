@@ -60,11 +60,11 @@ export const destinations: Destination[] = [
       "Capital vibrante con museos de clase mundial, gastronomia gourmet y una vida cultural inigualable.",
     longDescription:
       "Bogota, la capital de Colombia, es una metropolis de mas de 8 millones de habitantes que combina historia colonial con modernidad. La Candelaria, su centro historico, alberga el Museo del Oro con la coleccion de orfebreria prehispanica mas grande del mundo, y el Museo Botero con obras del maestro colombiano. Monserrate, a 3,152 metros, ofrece vistas panoramicas espectaculares. La zona G y Usaquen son epicentros gastronomicos donde la cocina colombiana se reinventa. De noche, la Zona Rosa y Chapinero vibran con bares, restaurantes y una escena cultural que no para.",
-    image: "https://images.unsplash.com/photo-1568307970720-a1948948e444?w=1200&q=80",
+    image: "https://images.unsplash.com/photo-1568307970720-a1948948e444?w=800&q=75&auto=format&fit=crop",
     gallery: [
-      "https://images.unsplash.com/photo-1599493758267-c6c884c4a860?w=800&q=80",
-      "https://images.unsplash.com/photo-1577587230708-187fdbef4d91?w=800&q=80",
-      "https://images.unsplash.com/photo-1536086845232-6a5d65e6e5b3?w=800&q=80",
+      "https://images.unsplash.com/photo-1599493758267-c6c884c4a860?w=600&q=75&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1577587230708-187fdbef4d91?w=600&q=75&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1536086845232-6a5d65e6e5b3?w=600&q=75&auto=format&fit=crop",
     ],
     activities: [
       { name: "Museo del Oro", description: "La coleccion de orfebreria prehispanica mas grande del mundo con mas de 55,000 piezas.", icon: "museum" },
@@ -108,11 +108,11 @@ export const destinations: Destination[] = [
       "Murallas centenarias, playas cristalinas, historia viva y el mejor atardecer del Caribe te esperan.",
     longDescription:
       "Cartagena de Indias es una ciudad que atrapa todos los sentidos. Declarada Patrimonio de la Humanidad por la UNESCO, su centro historico amurallado es un laberinto de calles empedradas, balcones florecidos, iglesias coloniales y plazas donde el tiempo parece detenerse. Pero Cartagena es mucho mas que historia: sus playas en las Islas del Rosario son un paraiso de aguas turquesas, su gastronomia fusiona sabores africanos, espanoles e indigenas, y su vida nocturna en Getsemani es una explosion de musica, arte callejero y cultura viva.",
-    image: "https://images.unsplash.com/photo-1583531172005-814194fd1f83?w=1200&q=80",
+    image: "https://images.unsplash.com/photo-1583531172005-814194fd1f83?w=800&q=75&auto=format&fit=crop",
     gallery: [
-      "https://images.unsplash.com/photo-1580975556833-3c7d8de41706?w=800&q=80",
-      "https://images.unsplash.com/photo-1569839333583-7375336cde4b?w=800&q=80",
-      "https://images.unsplash.com/photo-1536086845232-6a5d65e6e5b3?w=800&q=80",
+      "https://images.unsplash.com/photo-1580975556833-3c7d8de41706?w=600&q=75&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1569839333583-7375336cde4b?w=600&q=75&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1536086845232-6a5d65e6e5b3?w=600&q=75&auto=format&fit=crop",
     ],
     activities: [
       { name: "Ciudad Amurallada", description: "Recorre las calles coloniales del centro historico declarado Patrimonio de la Humanidad.", icon: "castle" },
@@ -156,11 +156,11 @@ export const destinations: Destination[] = [
       "Innovacion, naturaleza exuberante, arte urbano y la calidez de su gente hacen de Medellin un destino unico.",
     longDescription:
       "Medellin ha pasado de ser una ciudad con un pasado dificil a convertirse en un modelo global de transformacion urbana. Ubicada en el Valle de Aburra a 1,500 metros de altitud, goza de un clima primaveral perfecto durante todo el ano. Sus sistemas de transporte innovadores como el Metrocable te llevan a miradores con vistas impresionantes, mientras que la Comuna 13 es hoy un museo de arte urbano a cielo abierto. Guatape ofrece la famosa Piedra del Penol con 740 escalones y vistas de ensueno.",
-    image: "https://images.unsplash.com/photo-1568736333610-eae6e0d4dbbb?w=1200&q=80",
+    image: "https://images.unsplash.com/photo-1568736333610-eae6e0d4dbbb?w=800&q=75&auto=format&fit=crop",
     gallery: [
-      "https://images.unsplash.com/photo-1599413987323-60e0a3b62823?w=800&q=80",
-      "https://images.unsplash.com/photo-1595981267686-e5e3bc058ded?w=800&q=80",
-      "https://images.unsplash.com/photo-1572722250878-b4c9a7ea6187?w=800&q=80",
+      "https://images.unsplash.com/photo-1599413987323-60e0a3b62823?w=600&q=75&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1595981267686-e5e3bc058ded?w=600&q=75&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1572722250878-b4c9a7ea6187?w=600&q=75&auto=format&fit=crop",
     ],
     activities: [
       { name: "Comuna 13", description: "Descubre la transformacion urbana mas inspiradora del mundo con grafitis espectaculares.", icon: "graffiti" },
@@ -203,11 +203,11 @@ export const destinations: Destination[] = [
       "Ritmo, sabor y alegria en cada esquina. Cali es la ciudad donde la musica y el baile son un estilo de vida.",
     longDescription:
       "Santiago de Cali, la tercera ciudad mas grande de Colombia, es reconocida mundialmente como la Capital de la Salsa. Aqui la musica no es solo entretenimiento, es un modo de vida. Desde las escuelas de salsa hasta las salsotecas de Juanchito, cada noche es una fiesta. El barrio San Antonio con sus calles bohemias, el cerro de Cristo Rey con vistas panoramicas, y la gastronomia vallecaucana con su famoso cholado hacen de Cali un destino vibrante.",
-    image: "https://images.unsplash.com/photo-1616091216791-a5360ab66dc0?w=1200&q=80",
+    image: "https://images.unsplash.com/photo-1616091216791-a5360ab66dc0?w=800&q=75&auto=format&fit=crop",
     gallery: [
-      "https://images.unsplash.com/photo-1616091093714-ccc305e8c4e7?w=800&q=80",
-      "https://images.unsplash.com/photo-1533106497176-45ae19e68ba2?w=800&q=80",
-      "https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=800&q=80",
+      "https://images.unsplash.com/photo-1616091093714-ccc305e8c4e7?w=600&q=75&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1533106497176-45ae19e68ba2?w=600&q=75&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=600&q=75&auto=format&fit=crop",
     ],
     activities: [
       { name: "Clases de Salsa", description: "Aprende a bailar salsa con los mejores instructores del mundo.", icon: "dance" },
@@ -250,11 +250,11 @@ export const destinations: Destination[] = [
       "La ciudad mas antigua de Colombia con playas virgenes, la Sierra Nevada y el mistico Parque Tayrona.",
     longDescription:
       "Santa Marta es la ciudad mas antigua de Colombia, fundada en 1525. Aqui la Sierra Nevada, la montana costera mas alta del mundo, desciende directamente al Mar Caribe creando paisajes de ensueno. El Parque Nacional Tayrona es su joya natural: playas virgenes rodeadas de selva tropical, piedras gigantes y aguas cristalinas. La Ciudad Perdida, una de las trekking mas epicas de Sudamerica, te lleva por la selva hasta ruinas precolombinas. Taganga y Minca complementan con buceo y cafe de montana.",
-    image: "https://images.unsplash.com/photo-1536086845232-6a5d65e6e5b3?w=1200&q=80",
+    image: "https://images.unsplash.com/photo-1536086845232-6a5d65e6e5b3?w=800&q=75&auto=format&fit=crop",
     gallery: [
-      "https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=800&q=80",
-      "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800&q=80",
-      "https://images.unsplash.com/photo-1559128010-7c1ad6e1b6a5?w=800&q=80",
+      "https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=600&q=75&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=600&q=75&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1559128010-7c1ad6e1b6a5?w=600&q=75&auto=format&fit=crop",
     ],
     activities: [
       { name: "Parque Tayrona", description: "Playas virgenes entre selva tropical y piedras gigantes en el Caribe.", icon: "beach" },
@@ -297,11 +297,11 @@ export const destinations: Destination[] = [
       "Islas paradisiacas con el mar mas cristalino del Caribe, cultura raizal y arrecifes de coral unicos.",
     longDescription:
       "San Andres y Providencia son dos islas colombianas en pleno Mar Caribe, mas cerca de Nicaragua que de Colombia continental. San Andres es famosa por su 'Mar de los Siete Colores', aguas tan cristalinas que puedes ver el fondo a metros de profundidad. Providencia, declarada Reserva de Biosfera por la UNESCO, es aun mas virgen y espectacular. La cultura raizal, mezcla de influencias africanas, britanicas y caribenas, le da una identidad unica con musica, gastronomia y un ingles criollo propio.",
-    image: "https://images.unsplash.com/photo-1559128010-7c1ad6e1b6a5?w=1200&q=80",
+    image: "https://images.unsplash.com/photo-1559128010-7c1ad6e1b6a5?w=800&q=75&auto=format&fit=crop",
     gallery: [
-      "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800&q=80",
-      "https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=800&q=80",
-      "https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=800&q=80",
+      "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=600&q=75&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=600&q=75&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=600&q=75&auto=format&fit=crop",
     ],
     activities: [
       { name: "Johnny Cay", description: "Islote paradisiaco con arena blanca, palmeras y aguas color turquesa.", icon: "island" },
@@ -344,11 +344,11 @@ export const destinations: Destination[] = [
       "Parques, canones espectaculares y deportes extremos rodeados de una naturaleza impresionante.",
     longDescription:
       "Bucaramanga, conocida como 'La Ciudad Bonita', es una joya escondida en el corazon de Santander. Rodeada de montanas y con mas de 160 parques, esta ciudad combina naturaleza con modernidad. A pocos kilometros encontraras el impresionante Canon del Chicamocha, uno de los mas profundos del mundo, donde puedes hacer parapente, canopy y teleferico. El pueblo colonial de Giron, la Mesa de los Santos con sus actividades de aventura, y una gastronomia unica hacen de Bucaramanga un destino inolvidable.",
-    image: "https://images.unsplash.com/photo-1559128010-7c1ad6e1b6a5?w=1200&q=80",
+    image: "https://images.unsplash.com/photo-1559128010-7c1ad6e1b6a5?w=800&q=75&auto=format&fit=crop",
     gallery: [
-      "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=800&q=80",
-      "https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=800&q=80",
-      "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=800&q=80",
+      "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=600&q=75&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=600&q=75&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=600&q=75&auto=format&fit=crop",
     ],
     activities: [
       { name: "Canon del Chicamocha", description: "Vive la adrenalina del teleferico mas largo de Sudamerica sobre un canon impresionante.", icon: "canyon" },
@@ -391,11 +391,11 @@ export const destinations: Destination[] = [
       "Carnaval, cumbia, alegria costera y una energia contagiosa que te hace bailar desde que llegas.",
     longDescription:
       "Barranquilla es la cuarta ciudad mas grande de Colombia y sede del segundo carnaval mas grande del mundo, declarado Patrimonio Inmaterial de la Humanidad por la UNESCO. La ciudad vibra con cumbia, vallenato y champeta. Su gastronomia costera es espectacular: butifarra, arepa de huevo, sancocho y jugos de frutas tropicales. El Malecon del Rio Magdalena ofrece paseos al atardecer, y los barrios como El Prado muestran arquitectura republicana impresionante.",
-    image: "https://images.unsplash.com/photo-1533106497176-45ae19e68ba2?w=1200&q=80",
+    image: "https://images.unsplash.com/photo-1533106497176-45ae19e68ba2?w=800&q=75&auto=format&fit=crop",
     gallery: [
-      "https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=800&q=80",
-      "https://images.unsplash.com/photo-1551632811-561732d1e306?w=800&q=80",
-      "https://images.unsplash.com/photo-1488085061387-422e29b40080?w=800&q=80",
+      "https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=600&q=75&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1551632811-561732d1e306?w=600&q=75&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1488085061387-422e29b40080?w=600&q=75&auto=format&fit=crop",
     ],
     activities: [
       { name: "Carnaval de Barranquilla", description: "Vive el segundo carnaval mas grande del mundo con desfiles, musica y color.", icon: "carnival" },
@@ -438,11 +438,11 @@ export const destinations: Destination[] = [
       "Montanas verdes, fincas cafeteras, el Valle de Cocora con sus palmas de cera y pueblos de colores.",
     longDescription:
       "El Eje Cafetero colombiano, declarado Paisaje Cultural Cafetero de la Humanidad por la UNESCO, comprende los departamentos de Caldas, Quindio y Risaralda. Aqui nace uno de los mejores cafes del mundo entre montanas verdes y paisajes de postal. El Valle de Cocora alberga la palma de cera del Quindio, el arbol nacional, que alcanza hasta 60 metros de altura. Salento es un pueblo de colores con arquitectura tipica paisa, y las fincas cafeteras ofrecen experiencias inmersivas donde aprendes todo el proceso del cafe.",
-    image: "https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=1200&q=80",
+    image: "https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=800&q=75&auto=format&fit=crop",
     gallery: [
-      "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=800&q=80",
-      "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=800&q=80",
-      "https://images.unsplash.com/photo-1551632811-561732d1e306?w=800&q=80",
+      "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=600&q=75&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=600&q=75&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1551632811-561732d1e306?w=600&q=75&auto=format&fit=crop",
     ],
     activities: [
       { name: "Valle de Cocora", description: "Senderismo entre las palmas de cera mas altas del mundo en un paisaje de ensueno.", icon: "tree" },
@@ -485,11 +485,11 @@ export const destinations: Destination[] = [
       "Selva amazonica, comunidades indigenas, delfines rosados y la biodiversidad mas rica del planeta.",
     longDescription:
       "Leticia es la capital del departamento del Amazonas, ubicada en la triple frontera entre Colombia, Brasil y Peru. Desde aqui accedes a la selva amazonica colombiana, una de las regiones con mayor biodiversidad del planeta. Puedes avistar delfines rosados, pescar piranas, visitar comunidades indigenas como los Tikuna, navegar por el rio Amazonas y dormir en lodges en medio de la selva. La Isla de los Micos y el Parque Amacayacu son imperdibles.",
-    image: "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=1200&q=80",
+    image: "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=800&q=75&auto=format&fit=crop",
     gallery: [
-      "https://images.unsplash.com/photo-1551632811-561732d1e306?w=800&q=80",
-      "https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=800&q=80",
-      "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?w=800&q=80",
+      "https://images.unsplash.com/photo-1551632811-561732d1e306?w=600&q=75&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=600&q=75&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?w=600&q=75&auto=format&fit=crop",
     ],
     activities: [
       { name: "Delfines Rosados", description: "Nada con delfines rosados del Amazonas en su habitat natural.", icon: "dolphin" },
@@ -532,11 +532,11 @@ export const destinations: Destination[] = [
       "Uno de los pueblos coloniales mejor conservados de America con la plaza empedrada mas grande de Colombia.",
     longDescription:
       "Villa de Leyva es un pueblo colonial en el departamento de Boyaca que parece congelado en el tiempo. Su plaza principal, completamente empedrada y sin un solo arbol, es la mas grande de Colombia y una de las mayores de Sudamerica. Las calles de piedra, las casas blancas con balcones, los museos paleontologicos con fosiles reales, y los vinedos circundantes crean una experiencia unica. El Desierto de la Candelaria, las pozas azules y la Cascada La Periquera complementan este destino magico.",
-    image: "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?w=1200&q=80",
+    image: "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?w=800&q=75&auto=format&fit=crop",
     gallery: [
-      "https://images.unsplash.com/photo-1536086845232-6a5d65e6e5b3?w=800&q=80",
-      "https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=800&q=80",
-      "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=800&q=80",
+      "https://images.unsplash.com/photo-1536086845232-6a5d65e6e5b3?w=600&q=75&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=600&q=75&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=600&q=75&auto=format&fit=crop",
     ],
     activities: [
       { name: "Plaza Mayor", description: "La plaza empedrada mas grande de Colombia, rodeada de arquitectura colonial.", icon: "plaza" },
@@ -580,11 +580,11 @@ export const destinations: Destination[] = [
       "Templos misticos, arrozales infinitos, surf epico y una espiritualidad que transforma.",
     longDescription:
       "Bali es mucho mas que una isla tropical. Conocida como la Isla de los Dioses, cada rincon vibra con una espiritualidad unica. Ubud es el corazon cultural con sus arrozales y retiros de yoga, mientras que Seminyak y Canggu son epicentros de surf y vida nocturna. Los templos como Uluwatu, al borde de acantilados sobre el oceano, ofrecen atardeceres que quitan el aliento.",
-    image: "https://images.unsplash.com/photo-1537996194471-e657df975ab4?w=1200&q=80",
+    image: "https://images.unsplash.com/photo-1537996194471-e657df975ab4?w=800&q=75&auto=format&fit=crop",
     gallery: [
-      "https://images.unsplash.com/photo-1555400038-63f5ba517a47?w=800&q=80",
-      "https://images.unsplash.com/photo-1518548419970-58e3b4079ab2?w=800&q=80",
-      "https://images.unsplash.com/photo-1573790387438-4da905039392?w=800&q=80",
+      "https://images.unsplash.com/photo-1555400038-63f5ba517a47?w=600&q=75&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1518548419970-58e3b4079ab2?w=600&q=75&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1573790387438-4da905039392?w=600&q=75&auto=format&fit=crop",
     ],
     activities: [
       { name: "Templo Uluwatu", description: "Contempla el atardecer desde este templo al borde del acantilado con danza Kecak.", icon: "temple" },
@@ -627,11 +627,11 @@ export const destinations: Destination[] = [
       "Arte, romance, gastronomia y una elegancia atemporal que convierte cada paseo en una obra maestra.",
     longDescription:
       "Paris no necesita presentacion. La Ciudad de la Luz ha cautivado a viajeros durante siglos con su combinacion unica de arte, historia, moda y gastronomia. Desde la majestuosidad de la Torre Eiffel hasta los pasillos infinitos del Louvre, desde los cafes de Montmartre hasta los jardines de Versalles, cada esquina de Paris es una postal.",
-    image: "https://images.unsplash.com/photo-1502602898657-3e91760cbb34?w=1200&q=80",
+    image: "https://images.unsplash.com/photo-1502602898657-3e91760cbb34?w=800&q=75&auto=format&fit=crop",
     gallery: [
-      "https://images.unsplash.com/photo-1499856871958-5b9627545d1a?w=800&q=80",
-      "https://images.unsplash.com/photo-1550340499-a6c60fc8287c?w=800&q=80",
-      "https://images.unsplash.com/photo-1431274172761-fca41d930114?w=800&q=80",
+      "https://images.unsplash.com/photo-1499856871958-5b9627545d1a?w=600&q=75&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1550340499-a6c60fc8287c?w=600&q=75&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1431274172761-fca41d930114?w=600&q=75&auto=format&fit=crop",
     ],
     activities: [
       { name: "Torre Eiffel", description: "Sube hasta la cima del monumento mas iconico del mundo.", icon: "tower" },
@@ -674,11 +674,11 @@ export const destinations: Destination[] = [
       "Rascacielos futuristas, templos zen, la mejor gastronomia del mundo y una cultura que fascina.",
     longDescription:
       "Tokio es una metropolis donde conviven armoniosamente el futuro y la tradicion. En Akihabara encuentras la tecnologia mas avanzada, mientras que en Asakusa el templo Senso-ji te transporta siglos atras. Shibuya y su famoso cruce son el pulso de la modernidad japonesa, y los barrios de Harajuku muestran la moda mas creativa del mundo. Con mas estrellas Michelin que cualquier ciudad, la gastronomia tokiota es legendaria.",
-    image: "https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?w=1200&q=80",
+    image: "https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?w=800&q=75&auto=format&fit=crop",
     gallery: [
-      "https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?w=800&q=80",
-      "https://images.unsplash.com/photo-1536098561742-ca998e48cbcc?w=800&q=80",
-      "https://images.unsplash.com/photo-1480796927426-f609979314bd?w=800&q=80",
+      "https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?w=600&q=75&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1536098561742-ca998e48cbcc?w=600&q=75&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1480796927426-f609979314bd?w=600&q=75&auto=format&fit=crop",
     ],
     activities: [
       { name: "Templo Senso-ji", description: "El templo budista mas antiguo de Tokio en el historico barrio de Asakusa.", icon: "temple" },
@@ -721,11 +721,11 @@ export const destinations: Destination[] = [
       "Atardeceres legendarios, pueblos blancos sobre acantilados volcanicos y aguas azules infinitas.",
     longDescription:
       "Santorini es la isla que parece haber sido disenada para fotos, pero la realidad supera cualquier imagen. Sus pueblos de casas blancas con cupulas azules se aferran a acantilados volcanicos sobre un mar infinitamente azul. Los atardeceres en Oia son legendarios, las playas de arena negra y roja son unicas en el mundo, y los vinedos producen algunos de los vinos mas exclusivos de Grecia.",
-    image: "https://images.unsplash.com/photo-1570077188670-e3a8d69ac5ff?w=1200&q=80",
+    image: "https://images.unsplash.com/photo-1570077188670-e3a8d69ac5ff?w=800&q=75&auto=format&fit=crop",
     gallery: [
-      "https://images.unsplash.com/photo-1613395877344-13d4a8e0d49e?w=800&q=80",
-      "https://images.unsplash.com/photo-1560703650-ef3e0f254ae0?w=800&q=80",
-      "https://images.unsplash.com/photo-1533105079780-92b9be482077?w=800&q=80",
+      "https://images.unsplash.com/photo-1613395877344-13d4a8e0d49e?w=600&q=75&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1560703650-ef3e0f254ae0?w=600&q=75&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1533105079780-92b9be482077?w=600&q=75&auto=format&fit=crop",
     ],
     activities: [
       { name: "Atardecer en Oia", description: "Contempla el atardecer mas famoso del mundo desde los acantilados.", icon: "sunset" },
@@ -768,11 +768,11 @@ export const destinations: Destination[] = [
       "Ruinas ancestrales, montanas sagradas y una herencia inca que sigue viva en cada piedra.",
     longDescription:
       "Cusco fue la capital del Imperio Inca y hoy es la puerta de entrada a una de las Siete Maravillas del Mundo Moderno: Machu Picchu. La ciudad mezcla arquitectura inca con colonial espanola de una manera unica. Sus calles empedradas, sus mercados coloridos, el Valle Sagrado con sus terrazas agricolas y la Montana de Siete Colores crean una experiencia que combina historia, aventura y misticismo.",
-    image: "https://images.unsplash.com/photo-1526392060635-9d6019884377?w=1200&q=80",
+    image: "https://images.unsplash.com/photo-1526392060635-9d6019884377?w=800&q=75&auto=format&fit=crop",
     gallery: [
-      "https://images.unsplash.com/photo-1587595431973-160d0d163e19?w=800&q=80",
-      "https://images.unsplash.com/photo-1580619305218-8423a7ef79b4?w=800&q=80",
-      "https://images.unsplash.com/photo-1548820395-fdf89989af8a?w=800&q=80",
+      "https://images.unsplash.com/photo-1587595431973-160d0d163e19?w=600&q=75&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1580619305218-8423a7ef79b4?w=600&q=75&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1548820395-fdf89989af8a?w=600&q=75&auto=format&fit=crop",
     ],
     activities: [
       { name: "Machu Picchu", description: "Visita la ciudadela inca perdida entre las nubes, una de las 7 maravillas.", icon: "ruins" },

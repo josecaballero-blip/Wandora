@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 import { useTheme } from "@/lib/ThemeContext";
 import WandoraCharacter from "./WandoraCharacter";
 
@@ -107,18 +108,26 @@ export default function About() {
 
             <div className="mt-8 grid grid-cols-2 gap-2 sm:gap-3 w-full max-w-sm">
               {[
-                "https://images.unsplash.com/photo-1533050487297-09b450131914?w=400&q=80",
-                "https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?w=400&q=80",
-                "https://images.unsplash.com/photo-1583997052103-b4a1cb974ce5?w=400&q=80",
-                "https://images.unsplash.com/photo-1596394516093-501ba68a0ba6?w=400&q=80",
+                "https://images.unsplash.com/photo-1533050487297-09b450131914?w=300&q=70&auto=format&fit=crop",
+                "https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?w=300&q=70&auto=format&fit=crop",
+                "https://images.unsplash.com/photo-1583997052103-b4a1cb974ce5?w=300&q=70&auto=format&fit=crop",
+                "https://images.unsplash.com/photo-1596394516093-501ba68a0ba6?w=300&q=70&auto=format&fit=crop",
               ].map((img, i) => (
                 <motion.div
                   key={i}
                   whileHover={{ scale: 1.05, rotate: i % 2 === 0 ? 2 : -2 }}
                   transition={{ type: "spring", stiffness: 300 }}
-                  className="aspect-square rounded-xl sm:rounded-2xl overflow-hidden bg-cover bg-center"
-                  style={{ backgroundImage: `url(${img})` }}
-                />
+                  className="relative aspect-square rounded-xl sm:rounded-2xl overflow-hidden"
+                >
+                  <Image
+                    src={img}
+                    alt={`Wandora viajes ${i + 1}`}
+                    fill
+                    sizes="(max-width: 768px) 40vw, 150px"
+                    className="object-cover"
+                    loading="lazy"
+                  />
+                </motion.div>
               ))}
             </div>
           </motion.div>

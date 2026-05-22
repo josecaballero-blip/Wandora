@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
+import Image from "next/image";
 import type { Destination } from "@/lib/destinations";
 
 interface DestinationCardProps {
@@ -28,9 +29,13 @@ export default function DestinationCard({
         href={`/destinos/${destination.slug}`}
         className="group block relative rounded-2xl sm:rounded-3xl overflow-hidden aspect-[4/5] sm:aspect-[3/4] shadow-lg hover:shadow-2xl transition-all duration-500"
       >
-        <div
-          className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
-          style={{ backgroundImage: `url(${destination.image})` }}
+        <Image
+          src={destination.image}
+          alt={destination.name}
+          fill
+          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+          className="object-cover transition-transform duration-700 group-hover:scale-110"
+          loading={index < 3 ? "eager" : "lazy"}
         />
 
         <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-80 group-hover:opacity-90 transition-opacity duration-500" />

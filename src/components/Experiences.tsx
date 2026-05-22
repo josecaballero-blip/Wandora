@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 import { useTheme } from "@/lib/ThemeContext";
 
 const experiences = [
@@ -9,7 +10,7 @@ const experiences = [
     description:
       "Parapente sobre cañones, surf en olas perfectas, trekking por montañas sagradas y rappel en cascadas.",
     image:
-      "https://images.unsplash.com/photo-1551632811-561732d1e306?w=800&q=80",
+      "https://images.unsplash.com/photo-1551632811-561732d1e306?w=600&q=75&auto=format&fit=crop",
     icon: (
       <svg
         className="w-8 h-8"
@@ -31,7 +32,7 @@ const experiences = [
     description:
       "Templos milenarios, museos de clase mundial, festivales locales y tradiciones ancestrales vivas.",
     image:
-      "https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?w=800&q=80",
+      "https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?w=600&q=75&auto=format&fit=crop",
     icon: (
       <svg
         className="w-8 h-8"
@@ -53,7 +54,7 @@ const experiences = [
     description:
       "Desde ceviche peruano hasta sushi en Tokio, cada destino tiene sabores que nunca olvidarás.",
     image:
-      "https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=800&q=80",
+      "https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=600&q=75&auto=format&fit=crop",
     icon: (
       <svg
         className="w-8 h-8"
@@ -75,7 +76,7 @@ const experiences = [
     description:
       "Arenas blancas, aguas cristalinas, selvas tropicales, volcanes activos y paisajes de otro mundo.",
     image:
-      "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800&q=80",
+      "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=600&q=75&auto=format&fit=crop",
     icon: (
       <svg
         className="w-8 h-8"
@@ -149,9 +150,13 @@ export default function Experiences() {
               }}
               className="group relative rounded-2xl sm:rounded-3xl overflow-hidden h-64 sm:h-80 cursor-pointer"
             >
-              <div
-                className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
-                style={{ backgroundImage: `url(${exp.image})` }}
+              <Image
+                src={exp.image}
+                alt={exp.title}
+                fill
+                sizes="(max-width: 768px) 100vw, 50vw"
+                className="object-cover transition-transform duration-700 group-hover:scale-110"
+                loading="lazy"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent group-hover:from-black/90 transition-all duration-500" />
 
